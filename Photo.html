@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+  <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+</head>
+  
+<body>
+  <div class="profile">
+    <img src="cinda.jpg" alt="Foto">
+  </div>
+  
+  <h1 class="title">
+    Happy <span>Level Up Day</span>
+</h1>
+<p id="typing"></p>
+
+  <button id="nextBtn" onclick="lanjut()">→</button>
+
+  <script>
+const text = "Happy Birthday, semoga happy selalu. Menjadi orang yang super duper ultra gokil, dan segala keinginannya tercapai (USAHA WOK!). Semoga ga jadi beban keluarga, yak.";
+
+const target = document.getElementById("typing");
+const nextBtn = document.getElementById("nextBtn");
+    
+let i = 0;
+
+function ketik() {
+    if (i < text.length) {
+        target.textContent += text.charAt(i);
+        i++;
+        setTimeout(ketik, 50);
+    } else {
+        nextBtn.style.display = "inline-block";
+    }
+}
+
+function lanjut(){
+    window.location.href = "Chat.html";
+}
+
+setTimeout(ketik, 1000);
+      </script>
+  <style>
+
+    #nextBtn{
+    display:none;
+    padding:6px 16px;
+    border:2px solid #000000;
+    border-radius:10px;
+    font-size:14px;
+    cursor:pointer;
+    }
+    
+    #nextBtn:active{
+    transform:scale(0.95);
+    }
+    
+    .profile{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.profile img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 6px solid white;
+    box-shadow:
+        0 0 0 5px rgba(255,255,255,.3),
+        0 8px 20px rgba(0,0,0,.2);
+  
+    animation: muncul 0.8s ease;
+}
+    
+body{
+    margin:0;
+    background:#e7e8ec;
+    text-align:center;
+                    }
+@keyframes muncul{
+    from{
+        opacity:0;
+        transform:scale(0.5);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.title{
+    margin-top:20px;
+    font-size:60px;
+    color:#000000;
+  font-family:cursive;
+}
+
+.title span{
+    display:block;
+    font-size:50px;
+}
+
+  #typing{
+    width:80%;
+    max-width:400px;
+    margin:25px auto;
+    font-size:18px;
+    font-family: 'Coiny', cursive;
+    line-height:1.7;
+    color:#6e6e6e;
+    min-height:100px;
+    animation: fadeText 1s ease;
+}
+
+@keyframes fadeText{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+    </style>
+
+  <audio id="song">
+    <source src="singkong.mp3" type="audio/mpeg">
+  </audio>
+  
+  <script>
+    window.onload = function () {
+    document.getElementById("song").play();
+};
+  </script>
+</body>
+</html>

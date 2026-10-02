@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Something Special 4u</title>
+</head>
+
+<body>
+
+<div class="chat-container">
+
+  <div class="chat-header">
+    <img src="narsis.jpg" alt="Profile">
+    
+    <div class="user-info">
+      <h2>Leonard narsis</h2>
+      <p>● Online</p>
+    </div>
+  </div>
+
+  <div class="chat-body">
+    
+    <div class="message">
+      Hai fans, happy birthday ya!
+    </div>
+
+    <div class="message">
+      Gokil juga lu bisa survival sampai sejauh ini. Tapi lebih gokil gw sih. 😎
+    </div>
+    
+    <div class="message reply" style="background: #dcf8c6; margin-left: auto;">
+      Dih, narsis bet 😒
+  </div>
+
+ <div class="message reply"   
+   style="background: #dcf8c6; margin-left: auto;">
+   But, ily 😻
+  </div>
+
+</div>
+
+  <div class="credit">
+    <p>Made with 💜</p>
+    <p>Created by Deska<br>
+  </div>
+
+<script>
+
+const messages = document.querySelectorAll(".message");
+
+messages.forEach((message, index) => {
+    setTimeout(() => {
+        message.classList.add("show");
+    }, index * 1500);
+});
+
+</script>
+
+<style>
+
+body{
+    margin:0;
+    min-height:100vh;
+    background:#c0a6d2ff;
+    font-family:Arial,sans-serif;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.chat-container{
+    width:90%;
+    max-width:600px;
+    background:white;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 8px 30px rgba(0,0,0,.15);
+}
+
+.chat-header{
+    display:flex;
+    align-items:center;
+    padding:25px;
+    border-bottom:1px solid #eee;
+}
+
+.chat-header img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid white;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+.user-info{
+    margin-left:15px;
+}
+
+.user-info h2{
+    margin:0;
+    font-size:22px;
+}
+
+.user-info p{
+    margin:3px 0 0;
+    color:#22c982;
+    font-size:14px;
+}
+
+.chat-body{
+    padding:25px;
+}
+
+.message{
+    width:fit-content;
+    max-width:80%;
+    background:#edf2f8;
+    padding:15px 20px;
+    margin-bottom:18px;
+    border-radius:20px;
+    font-size:17px;
+    line-height:1.6;
+
+    opacity:0;
+    transform:translateY(15px);
+    transition:.5s ease;
+}
+  .message.reply {
+    background: #dcf8c6 !important;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.message.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+  .credit{
+    text-align:center;
+    margin-top:15px;
+    font-size:12px;
+    color:#888;
+    line-height:1.5;
+}
+
+.credit p{
+    margin:3px 0;
+}
+  
+</style>
+  
+<audio id="song">
+    <source src="gokil.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+window.onload = function () {
+    document.getElementById("song").play();
+};
+  </script>
+  
+</body>
+</html>
